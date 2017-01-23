@@ -154,7 +154,7 @@ img, video {
         }
     }
 
-    @media (min-width: 40em) {
+    @media (min-width: 60em) {
         .photo-grid {
             grid-template-columns: repeat(4, 1fr)
         }
