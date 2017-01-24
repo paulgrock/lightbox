@@ -7,166 +7,162 @@ html {
 }
 
 body {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
 img, video {
-    max-width: 100%;
+  max-width: 100%;
 }
 
 .main-title,
 .photo-grid {
-    padding: 0 .5rem;
+  padding: 0 0.5rem;
 }
 
 .photo-grid {
-    text-align: center;
+  text-align: center;
 }
 
 @media (min-width: 40em) {
-    .photo-grid {
-        text-align: left;
-    }
+  .photo-grid {
+    text-align: left;
+  }
 }
 
 .photo-grid__img {
-    margin: 0 2rem 2rem 0;
+  margin: 0 2rem 2rem 0;
 }
 
 .light-box {
-    position: fixed;
-    top: 0;
-    left: 0;
-
-    height: 100vh;
-    width: 100vw;
-
-    display: flex;
-
-    background: rgba(0, 0, 0, .7);
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.7);
 }
 
 .light-box__container {
-    position: relative;
-    margin: auto;
-    max-width: 90%;
-
-    background: white;
+  position: relative;
+  max-width: 90%;
+  margin: auto;
+  background: white;
 }
 
 .light-box__close-button {
-    position: absolute;
-    top: 0;
-    right: 0;
-    z-index: 10;
-    transform: translate(50%, -50%);
-    display: inline-block;
-    background: white;
-    border-radius: 50%;
-    border: none;
-    opacity: .5;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 10;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  text-align: center;
+  background: #fff;
+  border: 0;
+  border-radius: 50%;
+  opacity: 0.5;
+  transform: translate(50%, -50%);
 }
 
 .light-box__close-button:hover {
-    opacity: 1;
+  opacity: 1;
 }
 
 .light-box__figure {
-    margin: 0;
+  margin: 0;
 }
 
 .light-box__title {
-    margin: 0;
-    padding: .5em 1em;
-    position: absolute;
-    top: 0;
-    background: rgba(0, 0, 0, .75);
-    color: white;
-    display: block;
-    width: 100%;
+  position: absolute;
+  top: 0;
+  display: block;
+  width: 100%;
+  padding: 0.5em 1em;
+  margin: 0;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.75);
 }
 
 .light-box__next-prev {
-    border: none;
-    display: inline-block;
-    position: absolute;
-    top: 50%;
-
-    padding: 1rem;
-
-    transform: translateY(-50%);
+  position: absolute;
+  top: 50%;
+  display: inline-block;
+  padding: 1rem;
+  transform: translateY(-50%);
 }
 
 .light-box__prev {
-    transform: translateY(-50%) scaleX(-1);
+  transform: translateY(-50%) scaleX(-1);
 }
 
 .light-box__next {
-    right: 0;
+  right: 0;
 }
 
 .light-box__navigation {
-    display: inline-block;
-    margin: 0;
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 200;
-    list-style-type: none;
-    padding: 0;
-    background: rgba(0, 0, 0, .5);
-    white-space: nowrap;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  z-index: 20;
+  display: inline-block;
+  padding: 0;
+  margin: 0;
+  white-space: nowrap;
+  list-style-type: none;
+  background: rgba(0, 0, 0, 0.5);
+  transform: translateX(-50%);
 }
 
 .light-box__nav-item {
-    display: inline-block;
-    opacity: .5;
+  display: inline-block;
+  opacity: 0.5;
 }
 
 .light-box__nav-button {
-    background: none;
-    border: none;
-    outline: none;
-    color: white;
-    font-size: 1rem;
+  font-size: 1rem;
+  color: #fff;
+  background: none;
+  border: 0;
+  outline: none;
 }
 
 .active {
-    opacity: 1
+  opacity: 1;
 }
 
 .hidden {
-    display: none;
+  display: none;
 }
 
 @supports (display: grid) {
+  .photo-grid {
+    display: grid;
+    grid-gap: 1rem;
+    grid-auto-columns: 10px;
+  }
+
+  .photo-grid__img {
+    margin: 0;
+  }
+
+  @media (min-width: 30em) {
     .photo-grid {
-        display: grid;
-        grid-gap: 1rem;
-        grid-auto-columns: 10px;
+      grid-template-columns: repeat(2, 1fr)
     }
+  }
 
-    .photo-grid__img {
-        margin: 0;
+  @media (min-width: 40em) {
+    .photo-grid {
+      grid-template-columns: repeat(3, 1fr)
     }
+  }
 
-    @media (min-width: 30em) {
-        .photo-grid {
-            grid-template-columns: repeat(2, 1fr)
-        }
+  @media (min-width: 60em) {
+    .photo-grid {
+      grid-template-columns: repeat(4, 1fr)
     }
-
-    @media (min-width: 40em) {
-        .photo-grid {
-            grid-template-columns: repeat(3, 1fr)
-        }
-    }
-
-    @media (min-width: 60em) {
-        .photo-grid {
-            grid-template-columns: repeat(4, 1fr)
-        }
-    }
+  }
 }

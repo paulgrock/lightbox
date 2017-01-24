@@ -25,6 +25,7 @@
     "eslint": "^3.14.0",
     "eslint-config-patreon": "^2.0.0",
     "eslint-plugin-react": "^6.9.0",
-    "mocha": "^3.2.0"
+    "mocha": "^3.2.0",
+    "stylelint-config-primer": "^1.4.0"
   }
 }
