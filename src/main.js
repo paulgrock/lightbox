@@ -8,19 +8,25 @@ const PHOTO_SET_ID = '72157626579923453'
 const USER_ID = '30966612@N02'
 
 let state = {
-    currentPhotoPos: 0,
-    photos: []
+    currentPhotoPosition: 0,
+    photos: [],
+    isLightBoxCreated: false
 }
 
-const setPositionAndUpdateLightBox = (pos) => {
-    state.currentPhotoPos = pos
-    lightBox.update(state.photos[pos], pos, state.photos.length)
+const setPositionAndUpdateLightBox = (position) => {
+    const oldPosition = state.currentPhotoPosition
+    state.currentPhotoPosition = position
+    lightBox.update(state.photos[position], position, oldPosition)
 }
 
 // Event listener for opening the light box
 document.querySelector('#photo-grid').addEventListener('click', (evt) => {
     const {target} = evt
     if (target.nodeName === 'IMG') {
+        if (state.isLightBoxCreated === false) {
+            lightBox.create(state.photos.length)
+            state.isLightBoxCreated = true
+        }
         setPositionAndUpdateLightBox(Number(target.dataset.pos))
     }
 })
@@ -37,15 +43,15 @@ document.body.addEventListener('click', (evt) => {
     }
 
     if (classList.includes('light-box__next-prev')) {
-        let currentPhotoPos = state.currentPhotoPos
-        if (id === 'light-box__next' && currentPhotoPos < state.photos.length - 1) {
-            currentPhotoPos += 1
+        let currentPhotoPosition = state.currentPhotoPosition
+        if (id === 'light-box__next' && currentPhotoPosition < state.photos.length - 1) {
+            currentPhotoPosition += 1
         }
 
-        if (id === 'light-box__prev' && currentPhotoPos > 0) {
-            currentPhotoPos -= 1
+        if (id === 'light-box__prev' && currentPhotoPosition > 0) {
+            currentPhotoPosition -= 1
         }
-        setPositionAndUpdateLightBox(currentPhotoPos)
+        setPositionAndUpdateLightBox(currentPhotoPosition)
     }
 
     if (classList.includes('light-box__nav-button')) {

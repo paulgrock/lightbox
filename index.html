@@ -7,26 +7,30 @@
 	<body>
 		<h1 class="main-title">Flickr API Photos</h1>
         <div id="photo-grid" class="photo-grid"></div>
-        <template id="photo__image">
+        <template id="photo-image-tmpl">
             <img src="" alt="" class="photo-grid__img">
         </template>
         <template id="light-box-tmpl">
-            <div id="light-box__container" class="light-box__container">
-                <div id="light-box__content">
-                    <h3 id="light-box__title" class="light-box__title"></h3>
-                    <img id="light-box__img" src="" alt="">
+            <div id="light-box" class="light-box hidden">
+                <div id="light-box__container" class="light-box__container">
+                    <button id="light-box__close-button" class="light-box__close-button" >x</button>
+                    <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTkiIGhlaWdodD0iODUiIHZpZXdCb3g9IjAgMCAxOSA4NSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJNMCAwaDNsMTYgNDEuNDRMMyA4NUgwbDE2LTQzLjU2IiBmaWxsPSIjZmZmIiAvPjwvc3ZnPgo=" alt="Left Arrow" id="light-box__prev" class="light-box__prev light-box__next-prev">
+                    <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTkiIGhlaWdodD0iODUiIHZpZXdCb3g9IjAgMCAxOSA4NSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJNMCAwaDNsMTYgNDEuNDRMMyA4NUgwbDE2LTQzLjU2IiBmaWxsPSIjZmZmIiAvPjwvc3ZnPgo=" alt="Right Arrow" id="light-box__next" class="light-box__next light-box__next-prev">
+                    <ul id="light-box__navigation" class="light-box__navigation">
+                    </ul>
                 </div>
-                <button id="light-box__close-button" class="light-box__close-button" >x</button>
-                <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTkiIGhlaWdodD0iODUiIHZpZXdCb3g9IjAgMCAxOSA4NSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJNMCAwaDNsMTYgNDEuNDRMMyA4NUgwbDE2LTQzLjU2IiBmaWxsPSIjZmZmIiAvPjwvc3ZnPgo=" alt="Left Arrow" id="light-box__prev" class="light-box__prev light-box__next-prev">
-                <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTkiIGhlaWdodD0iODUiIHZpZXdCb3g9IjAgMCAxOSA4NSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJNMCAwaDNsMTYgNDEuNDRMMyA4NUgwbDE2LTQzLjU2IiBmaWxsPSIjZmZmIiAvPjwvc3ZnPgo=" alt="Right Arrow" id="light-box__next" class="light-box__next light-box__next-prev">
-                <ul id="light-box__navigation" class="light-box__navigation">
-                </ul>
             </div>
         </template>
         <template id="light-box-nav-tmpl">
             <li class="light-box__nav-item">
                 <button class="light-box__nav-button">•</button>
             </li>
+        </template>
+        <template id="light-box-image-tmpl">
+            <figure id="light-box__figure" class="light-box__figure">
+                <h3 id="light-box__title" class="light-box__title"></h3>
+                <img id="light-box__img" src="" alt="">
+            </figure>
         </template>
         <script src="dist/bundle.js"></script>
 	</body>

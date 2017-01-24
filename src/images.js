@@ -11,7 +11,7 @@ const createImage = ({thumbUrl, title, index, imgTmpl}) => {
 module.exports = {
     create(images) {
         const frag = document.createDocumentFragment()
-        const imgTmpl = document.querySelector('#photo__image').content.querySelector('img')
+        const imgTmpl = document.querySelector('#photo-image-tmpl').content.querySelector('img')
         images.forEach(({thumbUrl, title}, index) => {
             const imgEl = createImage({
                 thumbUrl,
