@@ -21,13 +21,17 @@ img, video {
 }
 
 .photo-grid {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
+    text-align: center;
+}
+
+@media (min-width: 40em) {
+    .photo-grid {
+        text-align: left;
+    }
 }
 
 .photo-grid__img {
-    margin: 2rem 2rem 0 0;
+    margin: 0 2rem 2rem 0;
 }
 
 .light-box {
